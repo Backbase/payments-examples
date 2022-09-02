@@ -1,0 +1,36 @@
+backbase:
+  payments:
+    <!-- tag::validation-rule-webhook[] -->    
+    rules:
+      no-fraud-detected:
+        type: webhook
+        when:
+          - post-enrich
+        configuration:
+          service-id: payveris-integrator-validate-api
+    <!-- end::validation-rule-webhook[] -->
+    <!-- tag::validation-rule-spel[] -->
+    under-hundred-transaction:
+      type: SpEL-field
+      attribute: transferTransactionInformation?.instructedAmount?.amount < 100
+      when:
+        - pre-enrich
+    amount-less-than-available-balance:
+      type: SpEL-field
+      spelRoot: extended
+      attribute: originatorArrangement.availableBalance ge identifiedPaymentOrder.transferTransactionInformation?.instructedAmount?.amount
+      when:
+        - post-enrich
+    counterparty-account-is-visible:
+      type: SpEL-field
+      spelRoot: extended
+      attribute: counterpartyArrangement.visible eq true
+      when:
+        - post-enrich
+    <!-- end::validation-rule-spel[] -->
+    types:
+      SEPA_CT_ANTI_FRAUD:
+        business-function: SEPA CT
+        validation:
+          rules:
+            - no-fraud-detected
