@@ -129,15 +129,7 @@
             <version>${jsr305.version}</version>
         </dependency>
 
-        <!-- Add dependencies for your services, e.g. BB raml specifications, integration clients -->
-
-        <!-- Uncomment the following dependency if DBS inter-service communication is needed -->
-        <!--
-         <dependency>
-            <groupId>com.backbase.buildingblocks</groupId>
-            <artifactId>communication</artifactId>
-         </dependency>
-       -->
+        <!-- Add dependencies for your service -->
     </dependencies>
 
     <build>
