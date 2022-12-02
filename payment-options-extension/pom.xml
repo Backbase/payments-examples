@@ -22,7 +22,7 @@
     <!-- tag::add-properties[] -->
     <properties>
         <java.version>17</java.version>
-        <backbase-bom.version>2022.11</backbase-bom.version>
+        <backbase-bom.version>2022.12</backbase-bom.version>
         <swagger-annotations.version>1.6.8</swagger-annotations.version>
         <jackson-databind-nullable.version>0.2.4</jackson-databind-nullable.version>
         <jsr305.version>3.0.2</jsr305.version>
