@@ -34,5 +34,4 @@ This service uses service-2-service authentication on its receiving endpoints.
 
 ## Community Documentation
 
-[Understand the webhook extension for payment options](https://community.backbase.
-com/documentation/DBS/latest/payment_options_webhook_extension)
+[Understand the webhook extension for payment options](https://community.backbase.com/documentation/DBS/latest/payment_options_webhook_extension)
